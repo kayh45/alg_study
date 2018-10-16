@@ -5,33 +5,26 @@ public class Main {
 
 		Scanner scan = new Scanner(System.in);
 		
-		int inputSum = 1;
+		int sugar = scan.nextInt();
 		
-		for (int i = 0; i < 3; i++) {
-			inputSum *= scan.nextInt();
-		}
-		
-		int[] resultArr = new int[10];
-		
-		char[] inputStr = Integer.toString(inputSum).toCharArray();
-		for (char ch: inputStr) {
-			switch (ch) {
-			case '0' : resultArr[0] += 1; break; 
-			case '1' : resultArr[1] += 1; break; 
-			case '2' : resultArr[2] += 1; break; 
-			case '3' : resultArr[3] += 1; break; 
-			case '4' : resultArr[4] += 1; break; 
-			case '5' : resultArr[5] += 1; break; 
-			case '6' : resultArr[6] += 1; break; 
-			case '7' : resultArr[7] += 1; break; 
-			case '8' : resultArr[8] += 1; break; 
-			case '9' : resultArr[9] += 1; break; 
+		int bag = 0;
+		while (true) {
+			if (sugar >= 5 && sugar % 5 == 0 || sugar % 3 != 0) {
+				sugar -= 5;
+			} else if (sugar >= 3){
+				sugar -= 3;
+			} else {
+				break;
 			}
+			
+			bag++;
 		}
-		
-		for (int n: resultArr) {
-			System.out.println(n);
+
+		if (sugar != 0) {
+			System.out.println(-1);
+		} else {
+			System.out.println(bag);
 		}
-		
+	
 	}	
 }
