@@ -29,3 +29,4 @@ for x in mArray:
             continue
 
     print('1' if exist else '0')
+# 시간초과
